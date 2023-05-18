@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#That comand will run when will call variable in line: echo $list
+list=`ls -l`
+
+echo $list
+
+#Almost the same, but get from first and set to second variable
+#cmd="ls -al"
+cmd="date"
+lll=`$cmd`
+
+echo $lll

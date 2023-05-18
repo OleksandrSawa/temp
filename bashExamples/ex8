@@ -1,0 +1,22 @@
+#!/bin/bash
+
+for x in ./*
+do
+	echo "file is: $x"
+#what means x##*. that means from x variable give me symbols after last point
+	case "${x##*.}" in
+#if will be sh then print next
+		sh)
+			echo "	extention sh" ;;
+		cfg)
+			echo "	extention cfg" ;;
+		py)
+			echo "	extention py" ;;
+		jar)
+			echo "	extention jar" ;;
+		*)
+			echo "	extention unknown"
+	# exit ;;
+	esac
+done
+

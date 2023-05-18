@@ -1,0 +1,29 @@
+#!/bin/bash
+
+#Will be arithmetical operation with this variable
+let x=10+2*4
+
+#Will be concatenation with this variable
+#x="222"
+str1="300"
+
+#
+#if [ $x < $str1 ]
+
+#-le means less. -ge means greater. -eq means equal. -lt means less than etc...
+if [ $x -le 100 ]
+	then
+		echo "$x < 100"
+	else
+		echo "ELSE"
+fi
+
+echo "\$x = $x"
+
+echo "Expected 28: $((10+$x))"
+
+echo $[20+$x]
+
+#Even if variable is string, in $(( will be doing like arithmetic operation
+echo "Result= $(($str1+$x))"
+

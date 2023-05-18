@@ -1,0 +1,51 @@
+#!/bin/bash
+
+my="4 1"
+#my=3
+myNumber=5
+
+#using -eq or something like that, that means i compare like number
+#and if in variable will not be number, we will have: integer expression expected
+if [ "$myNumber" -eq 3 ]
+	then
+		echo "Numbers is equal"
+	else
+		echo "Numbers is not equal"
+fi
+
+#function test was before [] . for now all dev using [] . test and [] it is the same.
+#will be eror if compare string 
+if test $my -eq 3
+	then
+		echo "Numbers is equal"
+	else
+		echo "Numbers is not equal"
+fi
+
+#compare two strings
+#if [ "$my" == "3 1" ]
+
+#without \ will be send data from variable to file "3 1"
+if [ "$my" \> "3 1" ]
+	then
+		echo "my > 3"
+	else
+		echo "my not > 3"
+fi
+
+echo "Done"
+
+#mytime=`date`
+#echo "time is: $mytime"
+
+#echo "Count $#"
+#echo "Par. \$1"
+#echo "Par. \$10 = ${10}"
+#echo "All Parameters \$* = $*"
+#echo "Set Parameters \$Q = $Q"
+
+#export MY2=11111221
+#echo "My = $My2"
+#export MY2=my2
+#echo "My2 = $MY2"
+

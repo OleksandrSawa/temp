@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# First line could be /bin/sh because 'sh' is link to bash, depending on the system build
+
+# Start
+echo "Start"
+
+# Set to variable value Hello 
+MYVARIABLE="Hello"
+
+# Do not work without quote
+mvar='bla bla'
+
+# Work with double quote and single quote
+# Backslash shield $ tell that next symbol is not variable it is symbol
+echo "1. Message \$MYVARIABLE-$MYVARIABLE"
+echo '2. Message \$MYVARIABLE-$MYVARIABLE'
+
+echo $mvar
+
+echo "Done"

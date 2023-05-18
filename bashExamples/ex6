@@ -1,0 +1,60 @@
+#!/bin/bash
+
+#cycle while, if condition is true then going inside into the cycle, works as long as the variable is less than 5
+myvarwhile=0
+while [ $myvarwhile -ne 5 ]
+do
+	echo "$myvarwhile"
+	myvarwhile=$(( myvarwhile + 1 ))
+done
+echo "Cycle while done"
+
+#cycle until, if condition is false then going inside into the cycle
+myvaruntil=10
+until [ $myvaruntil -eq 5 ]
+do
+	echo $myvaruntil
+	myvaruntil=$(( $myvaruntil -1 ))
+done
+echo "Cycle until done"
+
+#cycle for, /etc/r* starts first, and then the body of the loop is executed, /etc/r* means get name all folders and files which start from r in folder /etc
+for myfile in /etc/r*
+do
+	if [ -d "$myfile" ]
+	then
+		echo "$myfile (dir)"
+	else
+		echo "$myfile (file)"
+	fi
+done
+echo "Cycle for done"
+
+
+echo "parameters $@"
+#cycle with explicitly specified strings separated by a space, this loop will loop through all of these values and the x variable will receive values one by one
+for x in one two three three four
+do
+	echo "number $x"
+done
+echo "Cycle for with explicitly specified strings separated by a space done"
+
+#take parameters from console
+for x in $@
+#for x in $*
+do
+	echo "number $x"
+done
+echo "Cycle for with parameters from console done"
+
+COUNTER=0
+while [ $COUNTER -lt 5 ]
+do
+	echo "The counter is $COUNTER"
+	let COUNTER=$COUNTER+1
+#	let COUNTER=$((COUNTER+1))
+#	((COUNTER++))
+done
+
+echo "Done"
+

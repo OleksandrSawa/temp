@@ -1,0 +1,52 @@
+#!/bin/bash
+
+myfunc() {
+	echo "count = $#"
+	echo "\$1 = $1"
+	echo "\$2 = $2"
+#will be use local variable
+	local myvar
+#will be use global variable
+	#myvar="$1 $2 $3"
+	#myvar="one two three"
+	for x in $myvar
+	do
+		echo $x
+	done
+	echo "function done"
+}
+
+myvar=111111
+#with double quote means we send one parameter 
+myfunc "123 456 789 $myvar 000"
+
+#without double quote means we send many parameters in function
+myfunc 123 456 789 $myvar 000
+
+echo "variable \$myvar= $myvar x= $x"
+
+#call function in another function
+function fun1(){
+	echo 34
+}
+
+function fun2(){
+#Use this construction if want get result of function
+	local res="result calling function fun1: $(fun1)"
+	echo $res
+}
+
+function fun3(){
+	fun1
+#get status code the lash operation
+	local res="second= $?"
+	echo $res
+}
+
+echo "Call fun2()"
+fun2
+
+echo "Call fun3"
+fun3
+
+

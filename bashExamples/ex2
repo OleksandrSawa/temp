@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo -n "Enter name "
+#Can read data from console and use it
+read name
+echo "Hello my friend $name"
+
