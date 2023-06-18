@@ -1,0 +1,13 @@
+name: My GitAction
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run script
+        run: |
+          echo "My first name is [Oleksandr]"
+          echo "My last name is [Shcherbakov]"
